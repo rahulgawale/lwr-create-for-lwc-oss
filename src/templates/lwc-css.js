@@ -1,0 +1,3 @@
+exports.template = `:host {
+
+}`;
