@@ -23,6 +23,24 @@ function activate(context) {
     );
 
     context.subscriptions.push(disposableLayout);
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand(
+            'lwr-snippets.createJsOnlyLwc',
+            function () {
+                lwcService.createJsOnlyLwc();
+            }
+        )
+    );
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand(
+            'lwr-snippets.createCssOnlyLwc',
+            function () {
+                lwcService.createCssOnlyLwc();
+            }
+        )
+    );
 }
 
 function deactivate() {}

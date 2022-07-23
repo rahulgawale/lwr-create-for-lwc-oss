@@ -11,6 +11,8 @@
     ],
     "activationEvents": [
         "onCommand:lwr-snippets.createLwc",
+        "onCommand:lwr-snippets.createJsOnlyLwc",
+        "onCommand:lwr-snippets.createCssOnlyLwc",
         "onCommand:lwr-snippets.createLayout"
     ],
     "main": "./extension.js",
@@ -21,8 +23,16 @@
                 "title": "LWR: Create Lightning Web Component"
             },
             {
+                "command": "lwr-snippets.createJsOnlyLwc",
+                "title": "LWR: Create Lightning Web Component (JS only)"
+            },
+            {
+                "command": "lwr-snippets.createCssOnlyLwc",
+                "title": "LWR: Create Lightning Web Component (CSS only)"
+            },
+            {
                 "command": "lwr-snippets.createLayout",
-                "title": "LWR: Create Layout"
+                "title": "LWR: Create LWR Layout"
             }
         ]
     },

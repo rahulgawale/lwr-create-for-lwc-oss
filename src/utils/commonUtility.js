@@ -28,10 +28,10 @@ function getDirectories(fs, path) {
     return fs
         .readdirSync(path)
         .filter(function (file) {
-            return fs.statSync(path + '/' + file).isDirectory();
+            return fs.statSync(path + '\\' + file).isDirectory();
         })
         .map(function (file) {
-            return path + '/' + file;
+            return path + '\\' + file;
         });
 }
 
