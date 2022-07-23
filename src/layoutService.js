@@ -14,16 +14,34 @@ const layoutNameOptions = (vscode.InputBoxOptions = {
     ignoreFocusOut: true
 });
 
+const customFolderOptions = (vscode.QuickPickOptions = {
+    title: `Select the destination folder for your layout`
+});
+
+async function getFolder() {
+    let selectedFolder = await vscode.window.showQuickPick(
+        ['/src/layouts', 'Custom'],
+        {
+            placeHolder: 'Select the destination folder for your component'
+        }
+    );
+
+    if (selectedFolder === 'Custom') {
+        return await vscode.window.showQuickPick(
+            commonUtils.getDirectories(fs, vscode.workspace.rootPath),
+            customFolderOptions
+        );
+    }
+    if (selectedFolder) {
+        return vscode.workspace.rootPath + selectedFolder;
+    }
+
+    return selectedFolder;
+}
+
 async function createLayout() {
     try {
-        console.log(
-            'all folders in root path: ',
-            commonUtils.getDirectories(fs, vscode.workspace.rootPath)
-        );
-        let layoutFolderPath = path.join(
-            vscode.workspace.rootPath,
-            '/src/layouts'
-        );
+        let layoutFolderPath = await getFolder();
         if (fs.existsSync(layoutFolderPath)) {
             let fileName = await vscode.window.showInputBox(layoutNameOptions);
             if (fileName) {
