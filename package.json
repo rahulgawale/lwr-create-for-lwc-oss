@@ -1,37 +1,50 @@
 {
-    "name": "lwr-snippets",
-    "displayName": "lwr-snippets",
-    "description": "Code snippets to create LWC Open Source components.",
+    "name": "lwr-create-for-lwc-oss",
+    "displayName": "LWR Create For LWC Open Source",
+    "description": "Code snippets for Salesforce LWC and LWR Open Source components.",
+    "author": {
+        "name": "Rahul Gawale",
+        "email": "rahul@forcetrails.com",
+        "url": "https://twitter.com/rahul_gawale"
+    },
+    "publisher": "Rahul Gawale",
+    "license": "BSD 3-Clause License",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.69.0"
     },
     "categories": [
+        "Snippets",
         "Other"
     ],
     "activationEvents": [
-        "onCommand:lwr-snippets.createLwc",
-        "onCommand:lwr-snippets.createJsOnlyLwc",
-        "onCommand:lwr-snippets.createCssOnlyLwc",
-        "onCommand:lwr-snippets.createLayout"
+        "onCommand:lwr-create-for-lwc-oss.createLwc",
+        "onCommand:lwr-create-for-lwc-oss.createJsOnlyLwc",
+        "onCommand:lwr-create-for-lwc-oss.createCssOnlyLwc",
+        "onCommand:lwr-create-for-lwc-oss.createLayout"
     ],
     "main": "./extension.js",
+    "icon": "./icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rahulgawale/lwr-create-for-lwc-oss.git"
+    },
     "contributes": {
         "commands": [
             {
-                "command": "lwr-snippets.createLwc",
+                "command": "lwr-create-for-lwc-oss.createLwc",
                 "title": "LWR: Create Lightning Web Component"
             },
             {
-                "command": "lwr-snippets.createJsOnlyLwc",
+                "command": "lwr-create-for-lwc-oss.createJsOnlyLwc",
                 "title": "LWR: Create Lightning Web Component (JS only)"
             },
             {
-                "command": "lwr-snippets.createCssOnlyLwc",
+                "command": "lwr-create-for-lwc-oss.createCssOnlyLwc",
                 "title": "LWR: Create Lightning Web Component (CSS only)"
             },
             {
-                "command": "lwr-snippets.createLayout",
+                "command": "lwr-create-for-lwc-oss.createLayout",
                 "title": "LWR: Create LWR Layout"
             }
         ]

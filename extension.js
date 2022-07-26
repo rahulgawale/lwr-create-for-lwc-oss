@@ -8,28 +8,28 @@ const layoutService = require('./src/layoutService');
 function activate(context) {
     context.subscriptions.push(
         vscode.commands.registerCommand(
-            'lwr-snippets.createLwc',
+            'lwr-create-for-lwc-oss.createLwc',
             lwcService.createLwc
         )
     );
 
     context.subscriptions.push(
         vscode.commands.registerCommand(
-            'lwr-snippets.createJsOnlyLwc',
+            'lwr-create-for-lwc-oss.createJsOnlyLwc',
             lwcService.createJsOnlyLwc
         )
     );
 
     context.subscriptions.push(
         vscode.commands.registerCommand(
-            'lwr-snippets.createCssOnlyLwc',
+            'lwr-create-for-lwc-oss.createCssOnlyLwc',
             lwcService.createCssOnlyLwc
         )
     );
 
     context.subscriptions.push(
         vscode.commands.registerCommand(
-            'lwr-snippets.createLayout',
+            'lwr-create-for-lwc-oss.createLayout',
             layoutService.createLayout
         )
     );
