@@ -42,6 +42,9 @@ async function getFolder() {
 async function createLayout() {
     try {
         let layoutFolderPath = await getFolder();
+        if (!layoutFolderPath) {
+            return;
+        }
         if (fs.existsSync(layoutFolderPath)) {
             let fileName = await vscode.window.showInputBox(layoutNameOptions);
             if (fileName) {
