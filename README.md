@@ -1,22 +1,27 @@
 # lwr-create-for-lwc-oss README
 
-This is the README for your extension "lwr-create-for-lwc-oss". After writing up a brief description, we recommend including the following sections.
+VS Code extension for Salesforce's Lightning Web Runtime and Lightning Web Component Open Source. This helps developers scaffolding new LWC components and layout templates for LWR Open source.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Below features are supported for LWR OSS projects
 
-For example if there is an image subfolder under your extension project workspace:
+1. Create a new Lightning web component.
+1. Create a new JS Only Lightning web component.
+1. Create a new CSS Only Lightning web component.
+1. Create a layout template for your web app.
+
+<!-- For example if there is an image subfolder under your extension project workspace:
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow. -->
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+NA
 
-## Extension Settings
+<!-- ## Extension Settings
 
 Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
 
@@ -26,16 +31,22 @@ This extension contributes the following settings:
 
 -   `myExtension.enable`: enable/disable this extension
 -   `myExtension.thing`: set to `blah` to do something
+ -->
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+None so far
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+Initial release with three commands
 
-### 1.0.0
+1. LWR: Create Lightning Web Component
+1. LWR: Create Lightning Web Component (JS only)
+1. LWR: Create Lightning Web Component (CSS only)
+1. LWR: Create LWR Layout
+
+<!-- ### 1.0.0
 
 Initial release of ...
 
@@ -47,9 +58,9 @@ Fixed issue #.
 
 Added features X, Y, and Z.
 
----
+--- -->
 
-## Working with Markdown
+<!-- ## Working with Markdown
 
 **Note:** You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
 
@@ -62,4 +73,4 @@ Added features X, Y, and Z.
 -   [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 -   [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Enjoy!**
+**Enjoy!** -->
