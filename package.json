@@ -24,7 +24,7 @@
         "onCommand:lwr-create-for-lwc-oss.createLayout"
     ],
     "main": "./extension.js",
-    "icon": "./icon.png",
+    "icon": "icon.png",
     "repository": {
         "type": "git",
         "url": "https://github.com/rahulgawale/lwr-create-for-lwc-oss.git"
