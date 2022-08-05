@@ -9,6 +9,7 @@ const lwc = require('./templates/lwc.js');
 const lwcHtml = require('./templates/lwc-html.js');
 const lwcCss = require('./templates/lwc-css.js');
 const lwcJsUtility = require('./templates/lwc-js-utility.js');
+const fsUtility = require('./utils/fsUtility.js');
 
 const commonUtils = require('./utils/commonUtility.js');
 
@@ -20,33 +21,40 @@ const componentNameOptions = (vscode.InputBoxOptions = {
 });
 
 const cssOptions = (vscode.QuickPickOptions = {
-    title: `Do you want to include CSS file?`
+    title: `Do you want to include CSS file?`,
+    placeHolder: 'Include CSS file in component?'
 });
 
 const customFolderOptions = (vscode.QuickPickOptions = {
-    title: `Select the destination folder for your component`
+    title: `Select the destination folder the component`,
+    placeHolder: 'Select the destination folder'
 });
+
+const modulesFolder = '/src/modules';
+const srcFolder = '/src';
 
 async function getFolder() {
     let selectedFolder = await vscode.window.showQuickPick(
-        ['/src/modules', '/src/components', 'Root', 'Custom'],
+        [modulesFolder + '/my', modulesFolder + '/c', 'Custom'],
         {
-            placeHolder: 'Select the destination folder for your component'
+            placeHolder: 'Select the destination folder for component'
         }
     );
 
     let finalFolderPath;
     if (selectedFolder) {
         if (selectedFolder === 'Custom') {
+            let files = [];
+            fsUtility.getFiles(
+                path.join(vscode.workspace.rootPath, srcFolder),
+                files
+            );
             finalFolderPath = await vscode.window.showQuickPick(
-                commonUtils.getDirectories(fs, vscode.workspace.rootPath),
+                files,
                 customFolderOptions
             );
         } else {
-            finalFolderPath =
-                selectedFolder !== 'Root'
-                    ? vscode.workspace.rootPath + selectedFolder
-                    : vscode.workspace.rootPath;
+            finalFolderPath = vscode.workspace.rootPath + selectedFolder;
         }
     }
     return finalFolderPath;
@@ -182,7 +190,7 @@ async function createCssOnlyLwc() {
                 );
 
                 vscode.window.showInformationMessage(
-                    `LWR: Component ${componentName} created successfully!`
+                    `LWR: Template "${componentName}" created successfully!`
                 );
             }
         }
@@ -198,7 +206,6 @@ function openFileInEditor(path, line) {
     vscode.workspace.openTextDocument(path).then((doc) =>
         vscode.window.showTextDocument(doc, { preview: false }).then(() => {
             commonUtils.gotoLine(vscode, line);
-            console.log('opened file: ', path);
         })
     );
 }

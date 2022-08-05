@@ -1,6 +1,7 @@
 const vscode = require('vscode');
 const lwcService = require('./src/lwcService');
 const layoutService = require('./src/layoutService');
+const contentService = require('./src/contentService');
 
 /**
  * @param {vscode.ExtensionContext} context
@@ -29,8 +30,22 @@ function activate(context) {
 
     context.subscriptions.push(
         vscode.commands.registerCommand(
-            'lwr-create-for-lwc-oss.createLayout',
-            layoutService.createLayout
+            'lwr-create-for-lwc-oss.createHtmlLayout',
+            layoutService.createHtmlLayout
+        )
+    );
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand(
+            'lwr-create-for-lwc-oss.createNunjucksLayout',
+            layoutService.createNunjucksLayout
+        )
+    );
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand(
+            'lwr-create-for-lwc-oss.createMarkdownContent',
+            contentService.createMarkdownContent
         )
     );
 }

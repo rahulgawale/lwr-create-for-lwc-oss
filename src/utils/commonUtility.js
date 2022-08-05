@@ -10,10 +10,6 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function createFile(fs, path, content) {
-    fs.writeFileSync(path, content);
-}
-
 function validateFileName(componentName) {
     if (!componentName) {
         return 'component name can not be empty';
@@ -22,17 +18,6 @@ function validateFileName(componentName) {
         return "component can't have non-alphanumeric character";
     }
     return null;
-}
-
-function getDirectories(fs, path) {
-    return fs
-        .readdirSync(path)
-        .filter(function (file) {
-            return fs.statSync(path + '\\' + file).isDirectory();
-        })
-        .map(function (file) {
-            return path + '\\' + file;
-        });
 }
 
 function openFileVSC(vscode, path, lineAt) {
@@ -46,7 +31,5 @@ function openFileVSC(vscode, path, lineAt) {
 
 exports.gotoLine = gotoLine;
 exports.capitalizeFirstLetter = capitalizeFirstLetter;
-exports.createFile = createFile;
 exports.validateFileName = validateFileName;
 exports.openFileVSC = openFileVSC;
-exports.getDirectories = getDirectories;
