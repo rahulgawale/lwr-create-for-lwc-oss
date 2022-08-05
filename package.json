@@ -9,7 +9,7 @@
     },
     "publisher": "Forcetrails",
     "license": "BSD 3-Clause License",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "engines": {
         "vscode": "^1.69.0"
     },
