@@ -6,4 +6,15 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+### 0.0.1
+
 -   Initial release
+
+### 0.0.2
+
+-   Added two new commands
+
+1. LWR: Create Nunjucks(njk) Layout: This command creates a new Nunjucks template in the projects layout folder.
+2. LWR: Create Markdown Content: This command creates a new markdown content page.
+
+-   Updated custom folder options for component creation
