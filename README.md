@@ -60,6 +60,23 @@ Added two more commands
 
 Updated the custom folder path options in commands.
 
+### 0.0.4
+
+Added JavaScript code snippets starting with lwr.
+
+1. lwr:eventDispatch
+1. lwr:eventDispatchDetail
+1. lwr:alertSuccess
+1. lwr:alertError
+1. lwr:alertWarning
+1. lwr:promptDefault
+1. lwr:promptWithHeader
+1. lwr:confirmWithoutHeader
+1. lwr:confirmWithHeader
+1. lwr:importLightningAlert
+1. lwr:importLightningPrompt
+1. lwr:importLightningConfirm
+
 <!-- Initial release of ...
 
 ### 1.0.1
