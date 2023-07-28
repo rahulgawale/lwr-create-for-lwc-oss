@@ -9,7 +9,7 @@
     },
     "publisher": "Forcetrails",
     "license": "BSD 3-Clause License",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "engines": {
         "vscode": "^1.69.0"
     },
@@ -18,12 +18,6 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:lwr-create-for-lwc-oss.createLwc",
-        "onCommand:lwr-create-for-lwc-oss.createJsOnlyLwc",
-        "onCommand:lwr-create-for-lwc-oss.createCssOnlyLwc",
-        "onCommand:lwr-create-for-lwc-oss.createHtmlLayout",
-        "onCommand:lwr-create-for-lwc-oss.createNunjucksLayout",
-        "onCommand:lwr-create-for-lwc-oss.createMarkdownContent"
     ],
     "main": "./extension.js",
     "icon": "icon.png",
@@ -56,6 +50,12 @@
             {
                 "command": "lwr-create-for-lwc-oss.createMarkdownContent",
                 "title": "LWR: Create Markdown Content"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/js-snippets.json"
             }
         ]
     },

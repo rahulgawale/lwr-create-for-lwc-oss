@@ -1,0 +1,117 @@
+{
+    "Dispatch Event": {
+        "prefix": "lwr:eventDispatch",
+        "body": ["this.dispatchEvent(new CustomEvent(\"$1\"));"],
+        "description": "Fire custom event"
+    },
+    "Dispatch Event with Detail": {
+        "prefix": "lwr:eventDispatchDetail",
+        "body": ["this.dispatchEvent(new CustomEvent(\"$1\", {detail: $2}));"],
+        "description": "Fire custom event with detail"
+    },
+    "Lightning Success Alert": {
+        "prefix": "lwr:alertSuccess",
+        "body": [
+            "await LightningAlert.open({",
+            "   message: \"${1:message}\",",
+            "   theme: \"success\",",
+            "   label: \"${2:label}\"",
+            "});"
+        ],
+        "description": "Open 'success' LightningAlert"
+    },
+    "Lightning Error Alert": {
+        "prefix": "lwr:alertError",
+        "body": [
+            "await LightningAlert.open({",
+            "   message: \"${1:message}\",",
+            "   theme: \"error\",",
+            "   label: \"${2:label}\"",
+            "});"
+        ],
+        "description": "Open 'error' LightningAlert"
+    },
+    "Lightning Warning Alert": {
+        "prefix": "lwr:alertWarning",
+        "body": [
+            "await LightningAlert.open({",
+            "   message: \"${1:message}\",",
+            "   theme: \"warning\",",
+            "   label: \"${2:label}\"",
+            "});"
+        ],
+        "description": "Open 'warning' LightningAlert"
+    },
+    "Lightning Success Prompt without header": {
+        "prefix": "lwr:promptDefault",
+        "body": [
+            "LightningPrompt.open({",
+            "    message: \"${1:message}\",",
+            "    label: \"${2:label}\",",
+            "    defaultValue: \"$3\"",
+            "}).then((value) => {",
+            "    if (value) {",
+            "       // do something with the value",
+            "       $4",
+            "    }",
+            "});"
+        ],
+        "description": "Open LightningPrompt without header"
+    },
+    "Lightning Error Prompt with Header": {
+        "prefix": "lwr:promptWithHeader",
+        "body": [
+            "LightningPrompt.open({",
+            "    message: \"${1:message}\",",
+            "    label: \"${2:label}\",",
+            "    defaultValue: \"$3\"",
+            "    variant: \"header\"",
+            "    theme: \"${4|success,error,warning|}\"",
+            "}).then((value) => {",
+            "    if (value) {",
+            "       // do something with the value",
+            "       $5",
+            "    }",
+            "});"
+        ],
+        "description": "Open LightningPrompt without header"
+    },
+    "Lightning Confirm without header": {
+        "prefix": "lwr:confirmWithoutHeader",
+        "body": [
+            "const result = await LightningConfirm.open({",
+            "    message: \"${1:message}\",",
+            "    variant: \"headerless\",",
+            "    label: \"${2:label}\",",
+            "});"
+        ],
+        "description": "Open Lightning Confirm without header"
+    },
+    "Lightning Confirm with header": {
+        "prefix": "lwr:confirmWithHeader",
+        "body": [
+            "const result = await LightningConfirm.open({",
+            "    message: \"${1:message}\",",
+            "    variant: \"header\",",
+            "    label: \"${2:label}\",",
+            "    theme: \"${4|success,error,warning|}\"",
+            "});"
+        ],
+        "description": "Open Lightning Confirm with header"
+    },
+    "Import LightningAlert": {
+        "prefix": "lwr:importLightningAlert",
+        "body": ["import LightningPrompt from \"lightning/alert\";"],
+        "description": "Import LightningAlert"
+    },
+    "Import LightningPrompt": {
+        "prefix": "lwr:importLightningPrompt",
+        "body": ["import LightningPrompt from \"lightning/prompt\";"],
+        "description": "Import LightningPrompt"
+    },
+    "Import LightningConfirm": {
+        "prefix": "lwr:importLightningConfirm",
+        "body": ["import LightningConfirm from \"lightning/confirm\";"],
+        "description": "Import LightningConfirm"
+    }
+}
