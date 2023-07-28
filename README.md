@@ -1,6 +1,8 @@
 # LWR Create For LWC Open Source
 
 VS Code extension for Salesforce's Lightning Web Runtime and Lightning Web Component Open Source. This helps developers scaffolding new LWC components and layout templates for LWR Open source.
+## Install/Download the extension
+[LWR Create For LWC Open Source](https://marketplace.visualstudio.com/items?itemName=Forcetrails.lwr-create-for-lwc-oss)
 
 ## Features
 
